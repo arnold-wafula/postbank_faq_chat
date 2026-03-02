@@ -2,56 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Postbank FAQ Assistant</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --page-bg: #f4f6f8;
-      --border: #e5e7eb;
-      --shell: #ffffff;
-    }
-
     html, body {
       height: 100%;
       margin: 0;
-      background: var(--page-bg);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
-
-    /* The ONLY container now */
-    .iframe-wrap {
-      width: 95%;
-      max-width: 900px;
-      height: 90vh;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--shell);
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-    }
-
-    .iframe-wrap iframe {
+    iframe {
+      display: block;
       width: 100%;
-      height: 100% block;
-    }
-
-    @media (max-width: 480px){
-      .iframe-wrap { height: 95vh; }
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
-
 <body>
-
-  <div class="iframe-wrap">
-    https://copilotstudio.microsoft.com/environments/Default-8277ed46-86f3-4492-a0d9-d9b5821a1127/bots/copilots_header_3dd3e/webchat?__version__=2
-  </div>
-
+  <iframe
+    title="Postbank FAQ Chatbot"
+    src="https://copilotstudio.microsoft.com/environments/Default-8277ed46-86f3-4492-a0d9-d9b5821a1127/bots/copilots_header_3dd3e/webchat?__version__=2"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allow="clipboard-write">
+  </iframe>
 </body>
 </html>

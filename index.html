@@ -2,109 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Postbank FAQ Assistant</title>
 
-  <!-- Optional brand font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --brand-bg: #111827;   /* header background */
-      --page-bg: #f4f6f8;    /* page background */
-      --ink: #111827;        /* text color */
-      --ink-subtle: #6b7280; /* subtle text */
-      --shell: #ffffff;      /* card/shell bg */
-      --border: #e5e7eb;     /* borders */
+    :root {
+      --page-bg: #f4f6f8;
+      --border: #e5e7eb;
+      --shell: #ffffff;
     }
 
-    /* Make the page fill the viewport */
-    html, body { height: 100%; }
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       background: var(--page-bg);
       font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-      color: var(--ink);
       display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;     /* center vertically */
-      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* Main shell around the chat */
-    .chat-container{
+    /* The ONLY container now */
+    .iframe-wrap {
       width: 95%;
       max-width: 900px;
-      height: 90vh;              /* how tall the chat area should be */
-      background: var(--shell);
-      border: 1px solid var(--border);
+      height: 90vh;
       border-radius: 12px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;     /* header + iframe column */
-      overflow: hidden;
-    }
-
-    /* Top header bar */
-    .chat-header{
-      background: var(--brand-bg);
-      color: #fff;
-      padding: 14px 18px;
-      font-weight: 600;
-      font-size: 17px;
-      letter-spacing: .3px;
-    }
-
-    /* The wrapper that holds the iframe (fills remaining height) */
-    .iframe-wrap{
-      flex: 1;                    /* take all remaining vertical space */
-      margin: 12px 18px 10px 18px;
-      border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--border);
-      background: #fff;
+      background: var(--shell);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
     }
 
-    /* Make the iframe fill its wrapper */
-    .iframe-wrap iframe{
+    .iframe-wrap iframe {
       width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
+      height: 100% block;
     }
 
-    /* Footer */
-    .powered-by{
-      text-align: center;
-      font-size: 11px;
-      color: var(--ink-subtle);
-      margin: 4px 0 10px 0;
-    }
-
-    /* Mobile tweaks */
     @media (max-width: 480px){
-      .chat-container{ height: 95vh; border-radius: 0; }
-      .iframe-wrap{ margin: 10px; }
+      .iframe-wrap { height: 95vh; }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="iframe-wrap" role="region" aria-label="Postbank chat">
-    <!-- Keep the full <iframe> and only change the src if Copilot gives you a new URL -->
-    <iframe
-      title="Postbank FAQ Chatbot"
-      src="https://copilotstudio.microsoft.com/environments/Default-8277ed46-86f3-4492-a0d9-d9b5821a1127/bots/copilots_header_3dd3e/webchat?__version__=2"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allow="clipboard-write"
-    ></iframe>
+  <div class="iframe-wrap">
+    https://copilotstudio.microsoft.com/environments/Default-8277ed46-86f3-4492-a0d9-d9b5821a1127/bots/copilots_header_3dd3e/webchat?__version__=2
   </div>
-
-  <div class="powered-by">Powered by Postbank • Prototype</div>
 
 </body>
 </html>
